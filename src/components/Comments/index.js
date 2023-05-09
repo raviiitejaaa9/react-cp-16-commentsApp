@@ -52,6 +52,20 @@ class Comments extends Component {
     }))
   }
 
+  onLike = id => {
+    console.log('likeTriggered')
+    const {commentList} = this.state
+
+    this.setState(prevState => ({
+      commentList: commentList.map(eachItem => {
+        if (id === eachItem.id) {
+          return {...eachItem, isLiked: !eachItem.isLiked}
+        }
+        return eachItem
+      }),
+    }))
+  }
+
   onDeleteComment = id => {
     console.log('delete Triggered on id', id)
     const {commentList} = this.state
@@ -111,6 +125,8 @@ class Comments extends Component {
               eachComment={eachItem}
               key={eachItem.id}
               onDeleteComment={this.onDeleteComment}
+              backgroundClassNames={initialContainerBackgroundClassNames}
+              onLike={this.onLike}
             />
           ))}
         </ul>

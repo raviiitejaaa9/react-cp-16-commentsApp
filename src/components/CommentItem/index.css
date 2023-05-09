@@ -47,7 +47,6 @@ body {
 }
 
 .profile {
-  background-color: #f59e0b;
   width: 31px;
   height: 31px;
   border-radius: 15px;
@@ -68,9 +67,12 @@ body {
 .name-time-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .name1 {
+  margin-right: 20px;
 }
 
 .comment1 {
@@ -102,4 +104,14 @@ body {
 }
 
 .delete-sec {
+}
+
+.like-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.delete-btn {
+  border: none;
+  background-color: transparent;
 }
